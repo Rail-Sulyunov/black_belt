@@ -1,0 +1,23 @@
+package stream;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ParallelStream {
+    public static void main(String[] args) {
+        List<Double> list = new ArrayList<>();
+
+        list.add(10.0);
+        list.add(5.0);
+        list.add(1.0);
+        list.add(0.25);
+
+//        double sumResult = list.parallelStream()
+//                .reduce((acum, elem) -> acum + elem).get();
+//        System.out.println("sumResult = " + sumResult);
+
+        double result = list.stream()
+                .reduce((acum, elem) -> acum / elem).get();
+        System.out.println("sumResult = " + result);
+    }
+}
